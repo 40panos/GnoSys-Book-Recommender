@@ -1,0 +1,72 @@
+{
+  "paths": {
+    "books": "Datasets/books_enriched.csv",
+    "ratings": "Datasets/ratings.csv",
+    "tags": "Datasets/tags.csv",
+    "book_tags": "Datasets/book_tags.csv",
+    "cache_prep": "Datasets/cached_data_prep.pkl",
+    "cache_models_dir": "Datasets/models_cache"
+  },
+  "api": {
+    "openai_key": "YOUR_OPENAI_API_KEY_HERE"
+  },
+  "logging": {
+    "log_file": "logs/app.log",
+    "console_level": "INFO",
+    "file_level": "DEBUG"
+  },
+  "execution_flags": {
+    "force_data_reload": false,
+    "run_evaluation": true,
+    "evaluation_mode": "rmse",
+    "run_content_based": true,
+    "run_collaborative_simple": true,
+    "run_collaborative_svd": true
+  },
+  "active_models": {
+    "content_tags": true,
+    "content_description": true,
+    "content_metadata": true,
+    "content_mixed": true,
+    "cf_item_cosine": true,
+    "cf_item_pearson": true,
+    "cf_user_cosine": true,
+    "cf_user_pearson": true,
+    "svd": true,
+    "ensemble": true
+  },
+  "preprocessing": {
+    "test_size": 0.20,
+    "random_state": 42,
+    "min_ratings_per_user": 5,
+    "min_ratings_per_book": 5
+  },
+  "models": {
+    "content_based": {
+      "min_df": 5,
+      "max_df": 0.40,
+      "mixed_weights": [0.60, 0.40]
+    },
+    "collaborative": {
+      "top_k_recommendations": 20,
+      "user_based_limit": 5000,
+      "svd_n_components": 50
+    },
+    "ensemble": {
+        "content_key": "ContentMixed",
+        "cf_key": "SVD_MatrixFact",
+        "weights": {
+            "content": 0.4,
+            "cf": 0.6
+        }
+    }
+  },
+  "evaluation": {
+    "k": 10,
+    "relevance_threshold": 4.0,
+    "metrics": {
+      "rmse": true,
+      "mae": true
+    }
+  }
+}
