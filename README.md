@@ -1,22 +1,39 @@
-GnoSys Book Recommendation Ecosystem
-GnoSys is a professional-grade book recommendation engine that blends traditional Machine Learning techniques with modern Generative AI. It features a sophisticated hybrid recommendation pipeline and an AI-powered Librarian that understands natural language queries.
-Key Features
-Hybrid Recommendation Engine: Combines Content-Based Filtering (TF-IDF on descriptions and tags) with Collaborative Filtering (User-Item interaction via Truncated SVD).
+# GnoSys: Hybrid Book Recommendation System & AI Assistant
 
-AI Librarian: An interactive chatbot powered by OpenAI's GPT-4o-mini that translates user moods and plot descriptions into database search terms.
+<p align="center">
+  <img src="logo.png" width="200" title="GnoSys Logo">
+</p>
 
-Advanced Analytics: Evaluation suite featuring RMSE/MAE for prediction accuracy and NDCG, Precision@K, and Recall@K for ranking quality.
+## 🎓 About this Project
+**GnoSys** is the result of my **Undergraduate Thesis**. It is a sophisticated book discovery platform that integrates traditional Machine Learning techniques with cutting-edge Generative AI.
 
-Interactive UI: A sleek, dark-themed dashboard built with Streamlit for browsing, searching, and chatting.
+The primary objective of this thesis was to develop a hybrid recommendation engine that overcomes the limitations of single-model systems, providing a personalized, interactive, and context-aware experience for the user.
 
-Optimized Performance: Integrated caching system (Pickle/Joblib) for pre-processed datasets and similarity matrices to ensure near-instant responses.
 
-File,Description
-main.py,The core Orchestrator that runs the entire pipeline from data to evaluation.
-data_preparation.py,"Handles ETL processes, data cleaning, and sparse matrix generation."
-models.py,"Contains the ML algorithms (SVD, TF-IDF, Demographic Filtering)."
-ai_assistant.py,The LLM Backend logic for intent analysis and keyword extraction.
-evaluation.py,Specialized module for Performance Metrics and model validation.
-main_app.py,The primary Streamlit UI integrating the library and the AI Assistant.
-utils.py,Shared utilities for JSON Configuration and centralized Logging.
-config.json,Centralized control for all hyperparameters and execution flags.
+
+## 🚀 Key Features
+* **Hybrid Recommendation Engine**: Combines **Collaborative Filtering** (SVD Matrix Factorization) and **Content-Based Filtering** (TF-IDF) to deliver high-accuracy suggestions.
+* **AI Librarian**: An integrated **GPT-4o-mini** powered assistant that acts as a digital librarian, capable of understanding natural language queries and providing Greek-aware book discussions.
+* **Interactive Dashboard**: A fully functional web interface built with **Streamlit** for seamless user interaction.
+* **Model Evaluation**: Built-in scripts for performance benchmarking using metrics such as RMSE and MAE.
+
+## 📂 Project Structure & File Descriptions
+
+| File | Description |
+| :--- | :--- |
+| **main_app.py** | The main entry point of the application and Streamlit UI management. |
+| **models.py** | The core logic containing the implementations of SVD and Content-Based algorithms. |
+| **ai_assistant.py** | Handles the communication with the OpenAI API for the AI Librarian features. |
+| **data_preparation.py** | Data cleaning, preprocessing pipelines, and cache management. |
+| **utils.py** | Utility functions for configuration loading and resource management. |
+| **config_sample.json** | Configuration template (rename to `config.json` and add your API key). |
+
+## 🛠️ Tech Stack
+* **Language**: Python 3.x
+* **Machine Learning**: Pandas, Scikit-learn, Surprise
+* **Artificial Intelligence**: OpenAI API (GPT Models)
+* **Frontend**: Streamlit
+* **Data Handling**: JSON-based configuration and Pickle for model serialization.
+
+---
+*Developed as part of my Undergraduate Thesis.*
