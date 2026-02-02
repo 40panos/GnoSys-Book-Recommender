@@ -5,7 +5,7 @@
 </p>
 
 ## 🎓 About this Project
-**GnoSys** is the result of my **Undergraduate Thesis**. It is a sophisticated book discovery platform that integrates traditional Machine Learning techniques with cutting-edge Generative AI.
+**GnoSys** is the result of my **Undergraduate Thesis**. It is a book discovery platform that integrates traditional recommendation techniques with cutting-edge Generative AI.
 
 The primary objective of this thesis was to develop a hybrid recommendation engine that overcomes the limitations of single-model systems, providing a personalized, interactive, and context-aware experience for the user.
 
@@ -37,3 +37,4 @@ The primary objective of this thesis was to develop a hybrid recommendation engi
 
 ---
 *Developed as part of my Undergraduate Thesis.*
+
